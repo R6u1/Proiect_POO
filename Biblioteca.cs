@@ -1,4 +1,4 @@
-namespace ConsoleApp9;
+namespace Proiect_POO;
 
 public class Biblioteca
 {
