@@ -1,19 +1,21 @@
 namespace proiectPOO;
 
 public class Student
-
 {
     private int nrImprumut;
-    private List<Resurse> carti;
-    private List<Resurse> istoricImprumutari;
+    private int nrMaxImprumut;
+    private List<Biblioteca> carti;
+    private List<Biblioteca> istoricImprumutari;
 
-    public Student(List<Resurse> carti)
+    public Student(int nrImprumut, int nrMaxImprumut, List<Biblioteca> carti, List<Biblioteca> istoricImprumutari)
     {
         this.nrImprumut = 0;
+        this.nrMaxImprumut = nrMaxImprumut;
         this.carti = carti;
+        this.istoricImprumutari = istoricImprumutari;
     }
 
-    public virtual List<Resurse> IstoricImprumutari
+    public List<Biblioteca> IstoricImprumutari
     {
         get => istoricImprumutari;
         set => istoricImprumutari = value;
@@ -30,7 +32,7 @@ public class Student
         set => nrImprumut = value;
     }
 
-    public List<Resurse> Carti
+    public List<Biblioteca> Carti
     {
         get => carti;
         set => carti = value;
@@ -48,63 +50,64 @@ public class Student
                 case 1:
                     Console.WriteLine("dati id-ul dupa care doriti sa cautati: ");
                     int idCautare = int.Parse(Console.ReadLine());
-                    foreach (Resurse resurse in carti)
+                    foreach (Biblioteca resurse in carti)
                     {
-                        if (resurse.Id == idCautare)
+                        if (resurse.ID == idCautare)
                             resurse.AfisareResursa();
+                        
                     }
                     break;
                 case 2:
                     Console.WriteLine("dati titlul dupa care doriti sa cautati: ");
                     string titluCautare = Console.ReadLine();
-                    foreach (Resurse resurse in carti)
+                    foreach (Biblioteca resurse in carti)
                     {
-                        if(resurse.Titlu.Equals(titluCautare))
+                        if (resurse.Titlu.Equals(titluCautare))
                             resurse.AfisareResursa();
                     }
                     break;
                 case 3:
                     Console.WriteLine("dati autorul dupa care doriti sa cautati: ");
                     string autorCautare = Console.ReadLine();
-                    foreach (Resurse resurse in carti)
+                    foreach (Biblioteca resurse in carti)
                     {
-                        if(resurse.Autor.Equals(autorCautare))
+                        if (resurse.Autor.Equals(autorCautare))
                             resurse.AfisareResursa();
                     }
                     break;
                 case 4:
                     Console.WriteLine("dati tipul dupa care doriti sa cautati: ");
                     string tipCautare = Console.ReadLine();
-                    foreach (Resurse resurse in carti)
+                    foreach (Biblioteca resurse in carti)
                     {
-                        if(resurse.Tip.Equals(tipCautare))
+                        if (resurse.Tip.Equals(tipCautare))
                             resurse.AfisareResursa();
                     }
                     break;
                 case 5:
                     Console.WriteLine("dati genul dupa care doriti sa cautati: ");
                     string genCautare = Console.ReadLine();
-                    foreach (Resurse resurse in carti)
+                    foreach (Biblioteca resurse in carti)
                     {
-                        if(resurse.Gen.Equals(genCautare))
+                        if (resurse.Gen.Equals(genCautare))
                             resurse.AfisareResursa();
                     }
                     break;
                 case 6:
                     Console.WriteLine("dati data publicarii dupa care doriti sa cautati: ");
                     DateTime dataPublicarii = DateTime.Parse(Console.ReadLine());
-                    foreach (Resurse resurse in carti)
+                    foreach (Biblioteca resurse in carti)
                     {
-                        if(resurse.DataPublicarii.Equals(dataPublicarii))
+                        if (resurse.DataPublicare.Equals(dataPublicarii))
                             resurse.AfisareResursa();
                     }
                     break;
                 case 7:
                     Console.WriteLine("dati stocul dupa care doriti sa cautati: ");
                     int stocCautare = int.Parse(Console.ReadLine());
-                    foreach (Resurse resurse in carti)
+                    foreach (Biblioteca resurse in carti)
                     {
-                        if(resurse.Stoc == stocCautare)
+                        if (resurse.Stoc == stocCautare)
                             resurse.AfisareResursa();
                     }
                     break;
@@ -120,7 +123,7 @@ public class Student
     {
         Console.WriteLine("dati titlul resursei pe care doriti sa o imprumutati: ");
         string titluCautare = Console.ReadLine();
-        foreach (Resurse resurse in carti)
+        foreach (Biblioteca resurse in carti)
         {
             if (resurse.Titlu.Equals(titluCautare))
             {
@@ -129,30 +132,25 @@ public class Student
                     resurse.Stoc--;
                     ImprumutariPlus();
 
-                    Tip tipResursa = resurse.Tip;
-                    if (tipResursa == Tip.CarteDeLectura)
+                    string tipResursa = resurse.Tip;
+                    if (tipResursa.Equals("Carte de lectura"))
                     {
-                        CarteDeLectura carteDeLectura = (CarteDeLectura)resurse;
-                        CarteDeLectura carte = new CarteDeLectura(resurse.Id, resurse.Titlu, resurse.Autor, resurse.Tip, resurse.Gen, resurse.DataPublicarii, resurse.Stoc);
+                        Biblioteca carte = new Biblioteca(resurse.ID, resurse.Titlu, resurse.Autor, resurse.Gen, resurse.DataPublicare, resurse.Stoc);
                         istoricImprumutari.Add(carte);
                     }
-                    else if (tipResursa == Tip.EBook)
+                    else if (tipResursa.Equals("EBook"))
                     {
-                        EBook ebook = (EBook)resurse;
-                        EBook carte = new EBook(ebook.Id, ebook.Titlu, ebook.Autor, ebook.Tip, ebook.Gen,
-                            ebook.DataPublicarii, ebook.Stoc, ebook.LinkDescarcare);
+                        Biblioteca carte = new Biblioteca(resurse.ID, resurse.Titlu, resurse.Autor, resurse.Gen, resurse.DataPublicare, resurse.Stoc,resurse.Link);
                         istoricImprumutari.Add(carte);
                     }
-                    else if (tipResursa == Tip.Manual)
+                    else if (tipResursa.Equals("Manual"))
                     {
-                        Manual manual = (Manual)resurse;
-                        Manual carte = new Manual(manual.Id, manual.Titlu, manual.Autor, manual.Tip,manual.Gen,manual.DataPublicarii,manual.Stoc,manual.Curs);
+                        Biblioteca carte = new Biblioteca(resurse.ID, resurse.Titlu, resurse.Autor, resurse.Gen, resurse.DataPublicare, resurse.Stoc,resurse.Curs);
                         istoricImprumutari.Add(carte);
                     }
-                    else if (tipResursa == Tip.Revista)
+                    else if (tipResursa.Equals("Revista"))
                     {
-                        Revista revista = (Revista)resurse;
-                        Revista carte = new Revista(revista.Id,revista.Titlu,revista.Autor,revista.Tip,revista.Gen,revista.DataPublicarii,revista.Stoc,revista.Editie,revista.Numar,revista.LunaPublicare);
+                        Biblioteca carte = new Biblioteca(resurse.ID, resurse.Titlu, resurse.Autor, resurse.Gen, resurse.DataPublicare, resurse.Stoc, resurse.Editie, resurse.NrPublicare, resurse.LunaPublicare);
                         istoricImprumutari.Add(carte);
                     }
                 }
@@ -164,10 +162,9 @@ public class Student
     public void Istoric()
     {
         Console.WriteLine("istoricul imprumutarilor este: ");
-        foreach (Resurse resurse in istoricImprumutari)
+        foreach (Biblioteca resurse in istoricImprumutari)
         {
             resurse.AfisareResursa();
         }
     }
 }
-
