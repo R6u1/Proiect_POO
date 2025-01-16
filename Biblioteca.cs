@@ -258,4 +258,3 @@ public class Biblioteca
             Console.WriteLine($"Editie: {Editie}, Numar Publicare: {NrPublicare}, Luna Publicare: {LunaPublicare}");
     }
 }
-}
