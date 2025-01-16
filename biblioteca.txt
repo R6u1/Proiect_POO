@@ -1,0 +1,18 @@
+1433|Eliberarea Mare|Ion Popescu|Fictiune|2003-05-20|18
+2388|Fizica pentru Incepatori|Andrei Ionescu|Non-Fictiune|2015-08-12|35|Matematica
+4766|Cazul Misterios|Elena Marinescu|Mister|2014-04-10|25|Limitat|3|9
+5130|Lumea Minunilor|George Dumitrescu|Biografie|2000-03-01|20
+6744|Adancul Albastru|Maria Popa|Fictiune|2022-06-15|40|Biologie
+8457|Povestea unui Detectiv|Laura Pop|Mister|1970-07-25|30|Special|5|6
+9124|Calatorie Prin Timp|Vasile Marin|Non-Fictiune|1995-11-05|50
+1568|Chimie Simplificata|Simona Stan|Non-Fictiune|2019-02-14|25|Chimie
+3852|Viata unui Geniu|Andreea Dobre|Biografie|1997-08-22|38|Primul|7|4
+4913|Sub Stele|Ioana Radu|Fictiune|2008-01-18|30
+6290|Comoara Pierduta|Mircea Ilie|Mister|2017-12-09|28|Matematica
+8438|Calatoria Inspiratoare|Lucian Popescu|Biografie|2023-05-30|45|Al Doilea|2|11
+9575|Dincolo de Orizont|Gabriela Pop|Fictiune|1985-03-10|22
+1624|Lumea Antica|Radu Petrescu|Non-Fictiune|2010-09-01|12|Istorie
+3897|Secretele Trecutului|Ioan Mihai|Mister|2021-06-20|34|Limitat|8|7
+1434|Evadarea cea Mare|Vasile Pop|Fictiune|2004-07-10|19|https://www.cartea.ro
+1236|Scanteia|George Becali|Drama|2022-11-15|5|Romana
+9576|La Marginea Lumii|George Popa|Fictiune|1986-04-15|24|https://www.books-express.ro

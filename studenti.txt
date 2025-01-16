@@ -1,0 +1,20 @@
+False|Andrei Popescu|Matematica|Informatica|Fizica
+True|Maria Ionescu|Chimie|Biologie
+False|Vlad Munteanu|Istorie|Geografie|Economie
+True|Elena Radu|Informatica|Matematica
+False|Dana Gherman|Engleza|Literatura
+False|Ionel Stan|Sport|Filosofie
+True|Andreea Pop|Arta|Psihologie|Matematica
+False|George Marin|Fizica|Chimie|Informatica
+False|Ioana Dumitrescu|Literatura|Istorie
+True|Mircea Ilie|Matematica|Informatica|Stiinte Politice
+False|Simona Stan|Biologie|Chimie
+False|Radu Petrescu|Istorie|Geografie
+True|Laura Pop|Engleza|Franceza|Germana
+False|Vasile Marin|Economie|Marketing
+False|Gabriela Pop|Psihologie|Educatie Fizica
+True|Lucian Popescu|Arta|Design
+False|Ioan Mihai|Matematica|Fizica
+False|Daniela Ionescu|Chimie|Biologie|Medicina
+True|Andrei Stan|Informatica|Robotica|Matematica
+False|Elena Petre|Istorie|Arheologie
